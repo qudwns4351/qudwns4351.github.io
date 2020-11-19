@@ -7,7 +7,7 @@ background: /img/posts/05.jpg
 published: true
 ---
 #### spring에서 톰캣 동작 원리
-<img src="https://user-images.githubusercontent.com/61040284/99372697-e6dfcf00-2903-11eb-9cb0-6851c699fa26.png" width="500px" height="300px">
+<img src="https://user-images.githubusercontent.com/61040284/99372697-e6dfcf00-2903-11eb-9cb0-6851c699fa26.png" width="750px" height="400px">
 1. web.xml 로딩
 2. ContextLoaderListener 호출
 3. ContextLoaderListener는 ApplicationContext를 로드하고 root-ApplicationContext가 로드된다.
