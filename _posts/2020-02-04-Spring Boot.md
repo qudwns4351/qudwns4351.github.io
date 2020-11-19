@@ -7,7 +7,7 @@ background: /img/posts/05.jpg
 published: true
 ---
 #### spring에서 톰캣 동작 원리
-<img src="https://user-images.githubusercontent.com/61040284/99372697-e6dfcf00-2903-11eb-9cb0-6851c699fa26.png">
+<img src="https://user-images.githubusercontent.com/61040284/99372697-e6dfcf00-2903-11eb-9cb0-6851c699fa26.png" width="500px" height="300px">
 1. web.xml 로딩
 2. ContextLoaderListener 호출
 3. ContextLoaderListener는 ApplicationContext를 로드하고 root-ApplicationContext가 로드된다.
@@ -17,8 +17,9 @@ published: true
 7. servlet-context.xml 파일에 의해 읽힘.
 8. FrontController 패턴을 이용해 주소 분배
 9. 응답(reponse) - html파일을 응답할지 Data를 응답할지 결정해야 하는데 html 파일을 응답하게 되면 ViewResolver가 관여하게 된다.   
-하지만 Data를 응답하게 되면 MessageConverter가 작동하게 되는데 메시지를 컨버팅할 때 기본전략은 json이다. 
-#### 스프링부트는 내장 톰캣을 가지고 있음.
+하지만 Data를 응답하게 되면 MessageConverter가 작동하게 되는데 메시지를 컨버팅할 때 기본전략은 json이다.
+
+##### 스프링부트는 내장 톰캣을 가지고 있음.
 따로 설치할 필요 없이 바로 실행 가능   
 
 http 통신 대신 소켓 통신을 하는 이유   
