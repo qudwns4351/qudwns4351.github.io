@@ -1,19 +1,28 @@
 ---
 layout: post
-title: 'Spring Boot'
+title: 'Spring & Tomcat'
 subtitle: '동작원리'
-date: '2020-01-30 23:45:13 -0400'
+date: '2020-11-01 23:45:13 -0400'
 background: /img/posts/05.jpg
 published: true
 ---
+#### spring에서 톰캣 동작 원리
 <img src="https://user-images.githubusercontent.com/61040284/99372697-e6dfcf00-2903-11eb-9cb0-6851c699fa26.png">
-
-
-#### 내장 톰캣
+1. web.xml 로딩
+2. ContextLoaderListener 호출
+3. ContextLoaderListener는 ApplicationContext를 로드하고 root-ApplicationContext가 로드된다.
+4. 이때 DB관련 객체가 생성된다.(service, dao, vo)
+5. 사용자 요청 (request)
+6. DispatcherServlet 동작
+7. servlet-context.xml 파일에 의해 읽힘.
+8. FrontController 패턴을 이용해 주소 분배
+9. 응답(reponse) - html파일을 응답할지 Data를 응답할지 결정해야 하는데 html 파일을 응답하게 되면 ViewResolver가 관여하게 된다.   
+하지만 Data를 응답하게 되면 MessageConverter가 작동하게 되는데 메시지를 컨버팅할 때 기본전략은 json이다. 
+#### 스프링부트는 내장 톰캣을 가지고 있음.
 따로 설치할 필요 없이 바로 실행 가능   
 
-소켓 통신을 하는 이유   
-- 연결이 끊어지지 않지만, 그 때문에 연결이 늘어나 부하가 크다.
+http 통신 대신 소켓 통신을 하는 이유   
+- 연결이 끊어지지 않는다. 하지만 그 때문에 연결이 늘어나 부하가 크다.
 
 #### 서블릿 컨테이너
 <img src="https://user-images.githubusercontent.com/61040284/99372561-b13ae600-2903-11eb-959c-5802720fda3e.png">
@@ -71,8 +80,8 @@ ApplicationContext의 종류에는 두가지가 있는데 (root-applicationConte
 - ViewResolver, Interceptor, MultipartResolver 객체를 생성하고 웹과 관련된 어노테이션 Controller, RestController를 스캔 한다.(DispatcherServlet에 의해 실행)   
 **- root-applicationContext**
 - 해당 어노테이션을 제외한 어노테이션 Service, Repository등을 메모리에 로딩하고 DB관련 객체를 생성한다.(ContextLoaderListener)   
-
 <img src="https://user-images.githubusercontent.com/61040284/99372704-e810fc00-2903-11eb-86ab-6716fbf44fca.png">
+
 servlet-applicationContext에서는 root-applicationContext가 로드한 객체를 참조할 수 있지만 그 반대는 불가능하다. 생성 시점이 다르기 때문이다.    
 **Bean Factory**
 필요한 객체를 Bean Factory에 등록할 수 도 있다. 여기에 등록하면 초기에 메모리에 로드되지 않고 필요할 때 getBean()이라는 메소드를 통하여 호출하여 메모리에 로드할 수 있다. 이것 또한 IoC이다. 그리고 필요할 때 DI하여 사용할 수 있다.    ApplicationContext와 다른 점은 Bean Factory에 로드되는 객체들은 미리 로드되지 않고 필요할 때 호출하여 로드하기 때문에 lazy-loading이 된다는 점이다.   
@@ -80,7 +89,3 @@ servlet-applicationContext에서는 root-applicationContext가 로드한 객체�
 #### Handler Mapping
 GET요청 => http://localhost:8080/post/1
 해당 주소 요청이 오면 적절한 컨트롤러의 함수를 찾아서 실행한다.   
-
-#### 응답
-html파일을 응답할지 Data를 응답할지 결정해야 하는데 html 파일을 응답하게 되면 ViewResolver가 관여하게 된다.   
-하지만 Data를 응답하게 되면 MessageConverter가 작동하게 되는데 메시지를 컨버팅할 때 기본전략은 json이다.

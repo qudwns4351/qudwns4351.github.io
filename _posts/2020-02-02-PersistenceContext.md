@@ -2,7 +2,7 @@
 layout: post
 title: 'JPA'
 subtitle: 영속성 컨텍스트
-date: '2020-02-01 20:45:13 -0400'
+date: '2020-10-03 20:45:13 -0400'
 background: /img/posts/05.jpg
 published: true
 ---

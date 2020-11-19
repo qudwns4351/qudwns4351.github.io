@@ -85,6 +85,7 @@ background: /img/posts/01.jpg
  - @Service로 정의한 클래스는 비지니스로직 처리 Service로 등록이 됨(Impl에서 사용 @Service("boardDao"))
 5. @Repository
  - Dao로 등록
+ 
 #### FrontController 패턴
  최초 앞단에서 request 요청을 받아서 필요한 클래스에 넘겨준다. 왜? web.xml에 다 정의하기가 너무 힘듬.   
  이때 새로운 요청이 생기기 때문에 request와 response가 새롭게 new될 수 있다. 그래서 아래의 RequestDispatcher가 필요하다.   
