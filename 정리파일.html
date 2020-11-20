@@ -18,12 +18,14 @@
 
 스레드는 독립적
 
-웹서버 갑 클라이언트 을  자원은 정적 자원만. 
+웹서버 갑 클라이언트 을  자원은 정적 자원만.
 웹 서버인 아파치는 정적파일에만 응답할 수 있으므로 jsp나 java파일을 인식 못함
 그래서 아파치에 톰캣을 추가한다.
 톰캣은 java코드를 컴파일하고 끝나면 html파일로 넘겨준다.
 
-FrontController + RequestDispatcher = DispatcherServlet
+stateless방식은 한번의 요청과 응답이 이루어지면 클라이언트와 서버와의 연결선이 끊어지는 것을 말한다.
+이 방식은 주로 http에 사용되는 방식이며 이는 서버의 부하를 줄여준다.
+(stateful은 지속적 연결)
 
 yml설정
 web.xml, root-context.xml, servlet-context.xml 합쳐놓은것.
