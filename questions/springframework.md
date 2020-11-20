@@ -72,20 +72,20 @@ background: /img/posts/01.jpg
 5. ViewResolver : View관련 정보를 갖고 실제 View를 찾아주는 역할을 한다.
 
 6. View : Controller가 처리한 결과값을 보여줄 View를 생성한다.
-기본적인 5가지 어노테이션
-1. @Controller
+#####기본적인 5가지 어노테이션   
+ **@Controller**   
  - 특정 클래스를 Controller로 등록하는 어노테이션
  - dispacter-servlet.xml에서 <bean>태그로 정의한 것과 동일한 효과를 나타냄
  - DefaultAnnotationHandlerMapping을 통해 컨트롤러로 등록되어 사용됨
-2. @RequestMapping
+**@RequestMapping**   
  - 컨트롤러로 등록된 클래스내에 특정 메서드를 요청되는 URL과 매칭시키는 어노테이션
-3. @Autowired
+**@Autowired**   
  - Spring에서 자동으로 Dependency Injection을 하기 위한 어노테이션
-4. @Service
+**@Service**   
  - @Service로 정의한 클래스는 비지니스로직 처리 Service로 등록이 됨(Impl에서 사용 @Service("boardDao"))
-5. @Repository
+**@Repository**   
  - Dao로 등록
- 
+
 #### FrontController 패턴
  최초 앞단에서 request 요청을 받아서 필요한 클래스에 넘겨준다. 왜? web.xml에 다 정의하기가 너무 힘듬.   
  이때 새로운 요청이 생기기 때문에 request와 response가 새롭게 new될 수 있다. 그래서 아래의 RequestDispatcher가 필요하다.   
