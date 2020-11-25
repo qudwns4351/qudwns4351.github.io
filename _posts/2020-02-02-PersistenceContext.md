@@ -20,6 +20,12 @@ published: true
   - 트랜잭션으로 인한 쓰기 지연
     - 영속성 컨텍스트는 트랜잭션 범위 안에서 동작한다. 그래서 트랜잭션이 끝나야 Commit이 이루어지고 반영된다.
 
+#### Entity 상태
+- 비영속 : Entity가 영속성 컨텍스트에 등록되어 있지 않음
+- 영속 : Entity가 영속성 컨텍스트에 등록되어 있음. (기능을 제공받을 수 있음)
+- 준영속 : Entity가 영속 상태에서 해제되었음 ( 하지만 영속성 컨텍스트에 식별정보는 남아있다 -> 다시 영속상태로 되돌릴 수 있음)
+- 삭제 : Entity가 영속성 컨텍스트에서 아예 삭제되었음.
+
 ### Entity Manager와 Entity Manager Factory
   Entity Manager는 엔티티를 조회하거나 등록, 수정, 삭제 시키기 위해 DB에 접근할 수 있는 객체입니다.    
   EntityManagerFactory는 Entity Manager를 생성합니다. 객체 생성 비용이 상당히 크기 때문에 한번만 생성하여 애플리케이션 전체에서 사용합니다.   
