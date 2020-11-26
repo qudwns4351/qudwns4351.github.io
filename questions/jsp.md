@@ -7,6 +7,7 @@ background: /img/jsp.jpg
 #### Servlet, JSP
 **Servlet**
 - Container가 이해할 수 있도록 구성된 자바코드로 이루어진 것(Html in JAVA)
+
 **JSP(Java Server Page)**
 - html 기반에 자바코드를 블록화하여 삽입한 것(JAVA in Html)
 

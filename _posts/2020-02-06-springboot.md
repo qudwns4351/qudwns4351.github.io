@@ -17,10 +17,8 @@ published: true
 사용법 : open-in-view=true 설정.
 <img src="https://user-images.githubusercontent.com/61040284/100190366-6fc4bf00-2f31-11eb-9fa5-a70a765ed952.png">
 
-##### 장점
--
 #### 기존 방식
--세션과 트랜잭션, jdbc커넥션이 서블릿이 시작되는 시점 부터 실행.
--종료는 Controller에서 응답전에 셋 다 같이 종료.
--eager만 가능 (lazy X) : 참조 객체와 항상 함께 로드되어야 하는 조건을 가진 엔티티에 대해선 LAZY 방식보단 EAGER 방식이 더 좋다.
+- 세션과 트랜잭션, jdbc커넥션이 서블릿이 시작되는 시점 부터 실행.
+- 종료는 Controller에서 응답전에 셋 다 같이 종료.   
+- eager만 가능 (lazy X) : 참조 객체와 항상 함께 로드되어야 하는 조건을 가진 엔티티에 대해선 LAZY 방식보단 EAGER 방식이 더 좋다.
 <img src="https://user-images.githubusercontent.com/61040284/100191928-5c672300-2f34-11eb-91fc-02f698f7189c.png">
