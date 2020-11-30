@@ -159,6 +159,7 @@ name = name + “홍”; 구문이 실행될 때 실제로는 스트링 버퍼�
 #### DAO 와 DTO
 DAO
 - Data Access Object의 약자로 간단히 데이터베이스의 데이터에 접근을 위한 객체이다. 데이터베이스에 접근을 하기위한 로직과 비즈니스 로직을 분리하기 위해서 사용한다. DB를 사용해 데이터를 조회하거나 조작하는 기능을 전담하도록 만든 오브젝트를 말한다.
+
 DTO
 - Data Transfer Object의 약자로 VO(Value Object)로 바꾸어 말할 수 있는데 계층간 데이터 교환을 위한 JavaBean을 말합니다. 여기서 말하는 계층이란 Controller, View, Business Layer, Persistent Layer를 말하며 각 계층간 데이터 교환을 위한 객체를 DTO 또는 VO라고 부릅니다. 그런데 VO는 동일한 개념이지만 read only 속성을 가집니다.
 
