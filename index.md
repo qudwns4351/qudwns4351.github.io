@@ -9,6 +9,7 @@ background: '/img/bg-index.jpg'
 번호 : 010-6756-7112   
 이메일 : <qudwns4351@naver.com>   
 깃헙주소 : <https://github.com/qudwns4351>   
+포트폴리오 : <https://github.com/qudwns4351/Springboot-JPA-Blog>
 
 SKILL SET   
 Programming Language      
