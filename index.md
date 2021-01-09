@@ -8,7 +8,7 @@ background: '/img/bg-index.jpg'
 현재 거주지 : 경기도 하남시   
 번호 : 010-6756-7112   
 이메일 : qudwns4351@naver.com   
-포트폴리오 : https://github.com/qudwns4351/Springboot-JPA-Blog   
+포트폴리오 : <https://github.com/qudwns4351/Springboot-JPA-Blog>   
 
 SKILL SET   
 Programming Language
